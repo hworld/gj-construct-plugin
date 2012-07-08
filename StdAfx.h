@@ -44,21 +44,21 @@ using namespace std;
 
 #define CONSTRUCT_SDK
 
-#include "..\..\Common\DXSnips.h"
-#include "..\..\Common\Renderers\RendererCommon.h"
+#include "Common\DXSnips.h"
+#include "Common\Renderers\RendererCommon.h"
 
 // SDK uses the base class for texture handles with no renderer-specific information.  Font handles
 // do not have their pointed-to class defined so are void*
 typedef cr::texture*			TextureHandle;
 typedef void*					FontHandle;
 
-#include "..\..\Common\VEdittime.h"
-#include "..\..\Common\Rundefs.h"
-#include "..\..\Common\VRuntime.h"
+#include "Common\VEdittime.h"
+#include "Common\Rundefs.h"
+#include "Common\VRuntime.h"
 
 
 // Global SDK definitions
-#include "..\..\Common\SDKdefs.h"
+#include "Common\SDKdefs.h"
 
 // Actions, Conditions and Expressions ACESEntry arrays
 //extern vector<ACESEntry> Conditions;
@@ -72,7 +72,7 @@ typedef void*					FontHandle;
 //extern vector<CString> ExpNames;
 
 #include "Main.h"
-#include "..\..\Common\bin.h"
+#include "Common\bin.h"
 //#include <stdlib.h>
 
 //{{AFX_INSERT_LOCATION}}

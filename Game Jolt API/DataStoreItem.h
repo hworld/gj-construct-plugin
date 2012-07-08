@@ -1,8 +1,6 @@
 #ifndef DATASTOREITEM_H
 #define DATASTOREITEM_H
 
-using namespace std;
-
 class GameJoltAPI;
 
 class DataStoreItem
@@ -18,10 +16,10 @@ public:
 
 	DataStoreItem();
 
-	bool Initialize( GameJoltAPI *api, DataStoreItem::Type type, CStdString key );
+	bool Initialize( GameJoltAPI* api, DataStoreItem::Type type, const CStdString& key );
 
-	DataStoreItem::Type GetType();
-	CStdString GetKey();
+	DataStoreItem::Type GetType() const;
+	CStdString GetKey() const;
 	CStdString GetData();
 
 private:

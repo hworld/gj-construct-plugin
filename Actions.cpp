@@ -107,7 +107,10 @@ long ExtObject::aLoadScores( LPVAL params )
 	if ( paramVal == 1 )
 		onlyUser = true;
 
-	m_Scores = api.GetScores( onlyUser, m_LoadScoresCount );
+	int tableId = params[1].GetInt();
+	int limit = params[2].GetInt();
+
+	m_Scores = api.GetScores( tableId, onlyUser, limit );
 
 	return 0;
 
@@ -120,8 +123,9 @@ long ExtObject::aAddScore( LPVAL params )
 	int scoreSort = params[1].GetInt();
 	CString extraData = params[2].GetString();
 	CString guestName = params[3].GetString();
+	int tableId = params[4].GetInt();
 
-	api.AddScore( CStdString( scoreString ), scoreSort, CStdString( extraData ), CStdString( guestName ) );
+	api.AddScore( CStdString( scoreString ), scoreSort, tableId, CStdString( extraData ), CStdString( guestName ) );
 
 	return 0;
 

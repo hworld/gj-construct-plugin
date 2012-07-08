@@ -1,8 +1,6 @@
 #ifndef TROPHY_H
 #define TROPHY_H
 
-using namespace std;
-
 class GameJoltAPI;
 
 class Trophy
@@ -12,20 +10,20 @@ public:
 
 	Trophy();
 
-	bool Initialize( GameJoltAPI *api, map<CStdString, CStdString> trophyInfo );
+	bool Initialize( GameJoltAPI* api, std::map< CStdString, CStdString >& trophyInfo );
 
-	int GetID();
-	CStdString GetTitle();
-	CStdString GetDescription();
-	CStdString GetDifficulty();
+	int GetID() const;
+	CStdString GetTitle() const;
+	CStdString GetDescription() const;
+	CStdString GetDifficulty() const;
 	CStdString GetAchievedDate();
-	CStdString GetImageURL();
+	CStdString GetImageURL() const;
 	bool IsAchieved();
 
 private:
 
 	// Utility functions.
-	bool GetTrophyInfo( map<CStdString, CStdString> &trophyInfo );
+	bool GetTrophyInfo( std::map< CStdString, CStdString >& trophyInfo );
 
 	bool m_Initialized;
 

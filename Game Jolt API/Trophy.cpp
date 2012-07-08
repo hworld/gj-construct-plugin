@@ -17,7 +17,7 @@ Trophy::Trophy():
 }
 
 
-bool Trophy::Initialize( GameJoltAPI *api, map<CStdString, CStdString> trophyInfo )
+bool Trophy::Initialize( GameJoltAPI *api, std::map< CStdString, CStdString >& trophyInfo )
 {
 
 	m_pAPI = api;
@@ -35,7 +35,7 @@ bool Trophy::Initialize( GameJoltAPI *api, map<CStdString, CStdString> trophyInf
 }
 
 
-int Trophy::GetID()
+int Trophy::GetID() const
 {
 
 	return m_ID;
@@ -43,7 +43,7 @@ int Trophy::GetID()
 }
 
 
-CStdString Trophy::GetTitle()
+CStdString Trophy::GetTitle() const
 {
 
 	return m_Title;
@@ -51,7 +51,7 @@ CStdString Trophy::GetTitle()
 }
 
 
-CStdString Trophy::GetDescription()
+CStdString Trophy::GetDescription() const
 {
 
 	return m_Description;
@@ -59,7 +59,7 @@ CStdString Trophy::GetDescription()
 }
 
 
-CStdString Trophy::GetDifficulty()
+CStdString Trophy::GetDifficulty() const
 {
 
 	return m_Difficulty;
@@ -67,7 +67,7 @@ CStdString Trophy::GetDifficulty()
 }
 
 
-CStdString Trophy::GetImageURL()
+CStdString Trophy::GetImageURL() const
 {
 
 	return m_ImageURL;
@@ -79,7 +79,7 @@ CStdString Trophy::GetAchievedDate()
 {
 
 	bool ret;
-	map<CStdString, CStdString> trophyInfo;
+	std::map< CStdString, CStdString > trophyInfo;
 
 	ret = GetTrophyInfo( trophyInfo );
 
@@ -98,7 +98,7 @@ bool Trophy::IsAchieved()
 {
 
 	bool ret;
-	map<CStdString, CStdString> trophyInfo;
+	std::map< CStdString, CStdString > trophyInfo;
 
 	ret = GetTrophyInfo( trophyInfo );
 
@@ -113,13 +113,13 @@ bool Trophy::IsAchieved()
 }
 
 
-bool Trophy::GetTrophyInfo( map<CStdString, CStdString> &trophyInfo )
+bool Trophy::GetTrophyInfo( std::map< CStdString, CStdString >& trophyInfo )
 {
 
 	CStdString output;
 	CStdString gameIDString;
 	CStdString trophyIDString;
-	vector<map<CStdString, CStdString>> parsedOutput;
+	std::vector< std::map< CStdString, CStdString > > parsedOutput;
 	bool ret = true;
 	int trophyID = 0;
 

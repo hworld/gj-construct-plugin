@@ -84,7 +84,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\Construct\Plugins\Game Jolt API.csx"
+				OutputFile="Construct\Plugins\Game Jolt API.csx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				IgnoreAllDefaultLibraries="false"
@@ -111,7 +111,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\..\..\..\Construct Compile\Sprite Object\Release/ConstructSDK.bsc"
+				OutputFile="Construct Compile\Sprite Object\Release/ConstructSDK.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -195,7 +195,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\Construct\Plugins\Runtime\Game Jolt API.csx"
+				OutputFile="Construct\Plugins\Runtime\Game Jolt API.csx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				IgnoreAllDefaultLibraries="false"
@@ -223,7 +223,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\..\..\..\Construct Compile\Sprite Object\Runtime/ConstructSDK.bsc"
+				OutputFile="Construct Compile\Sprite Object\Runtime/ConstructSDK.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -893,7 +893,7 @@
 				>
 			</File>
 			<File
-				RelativePath="ICON.BMP"
+				RelativePath="res\ICON.BMP"
 				>
 				<FileConfiguration
 					Name="Runtime|Win32"
@@ -905,7 +905,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="res\ICON.BMP"
+				RelativePath="ICON.BMP"
 				>
 				<FileConfiguration
 					Name="Runtime|Win32"

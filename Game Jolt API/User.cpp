@@ -2,7 +2,7 @@
 #include "User.h"
 
 
-bool User::Initialize( GameJoltAPI *api )
+bool User::Initialize( GameJoltAPI* api )
 {
 
 	m_pAPI = api;
@@ -12,7 +12,7 @@ bool User::Initialize( GameJoltAPI *api )
 }
 
 
-CStdString User::GetUsername()
+CStdString User::GetUsername() const
 {
 
 	return m_Username;
@@ -20,7 +20,7 @@ CStdString User::GetUsername()
 }
 
 
-bool User::SetUsername( CStdString username )
+bool User::SetUsername( const CStdString& username )
 {
 
 	m_Username = username;
@@ -30,7 +30,7 @@ bool User::SetUsername( CStdString username )
 }
 
 
-CStdString User::GetUserToken()
+CStdString User::GetUserToken() const
 {
 
 	return m_UserToken;
@@ -38,7 +38,7 @@ CStdString User::GetUserToken()
 }
 
 
-bool User::SetUserToken( CStdString userToken )
+bool User::SetUserToken( const CStdString& userToken )
 {
 
 	m_UserToken = userToken;

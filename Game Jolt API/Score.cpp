@@ -18,7 +18,7 @@ Score::Score():
 }
 
 
-bool Score::Initialize( GameJoltAPI *api, map<CStdString, CStdString> scoreInfo )
+bool Score::Initialize( GameJoltAPI* api, std::map< CStdString, CStdString >& scoreInfo )
 {
 
 	m_pAPI = api;
@@ -38,7 +38,7 @@ bool Score::Initialize( GameJoltAPI *api, map<CStdString, CStdString> scoreInfo 
 }
 
 
-CStdString Score::GetScore()
+CStdString Score::GetScore() const
 {
 
 	return m_Score;
@@ -46,7 +46,7 @@ CStdString Score::GetScore()
 }
 
 
-int Score::GetSort()
+int Score::GetSort() const
 {
 
 	return m_Sort;
@@ -54,7 +54,7 @@ int Score::GetSort()
 }
 
 
-CStdString Score::GetExtraData()
+CStdString Score::GetExtraData() const
 {
 
 	return m_ExtraData;
@@ -62,7 +62,7 @@ CStdString Score::GetExtraData()
 }
 
 
-CStdString Score::GetUser()
+CStdString Score::GetUser() const
 {
 
 	return m_User;
@@ -70,7 +70,7 @@ CStdString Score::GetUser()
 }
 
 
-int Score::GetUserID()
+int Score::GetUserID() const
 {
 
 	return m_UserID;
@@ -78,7 +78,7 @@ int Score::GetUserID()
 }
 
 
-CStdString Score::GetGuest()
+CStdString Score::GetGuest() const
 {
 
 	return m_Guest;
@@ -86,7 +86,7 @@ CStdString Score::GetGuest()
 }
 
 
-CStdString Score::GetStoredDate()
+CStdString Score::GetStoredDate() const
 {
 
 	return m_StoredDate;

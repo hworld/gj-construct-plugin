@@ -1,8 +1,6 @@
 #ifndef USER_H
 #define USER_H
 
-using namespace std;
-
 class GameJoltAPI;
 
 class User
@@ -12,19 +10,19 @@ public:
 
 	User();
 
-	bool Initialize( GameJoltAPI *api );
+	bool Initialize( GameJoltAPI* api );
 
-	CStdString GetUsername();
-	bool SetUsername( CStdString username );
+	CStdString GetUsername() const;
+	bool SetUsername( const CStdString& username );
 
-	CStdString GetUserToken();
-	bool SetUserToken( CStdString userToken );
+	CStdString GetUserToken() const;
+	bool SetUserToken( const CStdString& userToken );
 
 private:
 
 	bool m_Initialized;
 
-	GameJoltAPI *m_pAPI;
+	GameJoltAPI* m_pAPI;
 
 	CStdString m_Username;
 	CStdString m_UserToken;

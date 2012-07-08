@@ -25,7 +25,6 @@ BEGIN_PROPERTY_TABLE();
 
 	PROPERTY_VALUE( m_GameID, "Game ID", "Your game's ID." );
 	PROPERTY_EDIT( m_GamePrivateKey, "Game Private Key", "Your game's private key." );
-	PROPERTY_VALUE( m_LoadScoresCount, "Load # of Scores", "How many scores to pull in when you load scores." );
 
 END_PROPERTY_TABLE  ();
 

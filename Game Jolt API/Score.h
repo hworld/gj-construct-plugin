@@ -1,8 +1,6 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-using namespace std;
-
 class GameJoltAPI;
 
 class Score
@@ -12,21 +10,21 @@ public:
 
 	Score();
 
-	bool Initialize( GameJoltAPI *api, map<CStdString, CStdString> scoreInfo );
+	bool Initialize( GameJoltAPI* api, std::map< CStdString, CStdString >& scoreInfo );
 
-	CStdString GetScore();
-	int GetSort();
-	CStdString GetExtraData();
-	CStdString GetUser();
-	int GetUserID();
-	CStdString GetGuest();
-	CStdString GetStoredDate();
+	CStdString GetScore() const;
+	int GetSort() const;
+	CStdString GetExtraData() const;
+	CStdString GetUser() const;
+	int GetUserID() const;
+	CStdString GetGuest() const;
+	CStdString GetStoredDate() const;
 
 private:
 
 	bool m_Initialized;
 
-	GameJoltAPI *m_pAPI;
+	GameJoltAPI* m_pAPI;
 
 	CStdString m_Score;
 	int m_Sort;

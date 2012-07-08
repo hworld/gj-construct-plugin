@@ -6,8 +6,8 @@
 DataStoreItem::DataStoreItem():
 	m_Initialized( false ),
 	m_Type( DataStoreItem::GAME ),
-	m_Key( "" ),
-	m_Data( "" )
+	m_Key( _T("") ),
+	m_Data( _T("") )
 {
 
 	/* Nothing */
@@ -15,7 +15,7 @@ DataStoreItem::DataStoreItem():
 }
 
 
-bool DataStoreItem::Initialize( GameJoltAPI *api, DataStoreItem::Type type, CStdString key )
+bool DataStoreItem::Initialize( GameJoltAPI* api, DataStoreItem::Type type, const CStdString& key )
 {
 
 	m_pAPI = api;
@@ -30,7 +30,7 @@ bool DataStoreItem::Initialize( GameJoltAPI *api, DataStoreItem::Type type, CStd
 }
 
 
-DataStoreItem::Type DataStoreItem::GetType()
+DataStoreItem::Type DataStoreItem::GetType() const
 {
 
 	return m_Type;
@@ -38,7 +38,7 @@ DataStoreItem::Type DataStoreItem::GetType()
 }
 
 
-CStdString DataStoreItem::GetKey()
+CStdString DataStoreItem::GetKey() const
 {
 
 	return m_Key;
@@ -52,8 +52,8 @@ CStdString DataStoreItem::GetData()
 	CStdString output;
 	CStdString gameIDString;
 	CStdString requestURL;
-	vector<map<CStdString, CStdString>> parsedOutput;
-	map<CStdString, CStdString> itemData;
+	std::vector< std::map< CStdString, CStdString > > parsedOutput;
+	std::map< CStdString, CStdString > itemData;
 	DataStoreItem dataItem;
 	bool ret = true;
 

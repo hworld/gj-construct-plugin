@@ -3,7 +3,7 @@
 
 // Include any used common ACE definitions.
 #ifdef RUN_ONLY
-#include "..\..\Common\CommonAceDef.hpp"
+#include "Common\CommonAceDef.hpp"
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -82,13 +82,16 @@ void DefineACES(MicroAceTime* at)
 
 
 	ADDPARAMCOMBO( "User's Scores?", "Just get the user's scores?", "No|Yes" );
-	ADDACT( "Load Scores", "Scores", "Load the scores. For just the stored user? (%0)", &ExtObject::aLoadScores, "LoadScores", 0 );
+	ADDPARAM( PARAM_VALUE, "Table ID", "The high score table to pull scores for. Leave blank for primary table." );
+	ADDPARAM( PARAM_VALUE, "Limit", "The number of scores to pull. Leave blank for default." );
+	ADDACT( "Load Scores", "Scores", "Load the scores. For just the stored user? (%0) Table ID: %1 Limit: %2", &ExtObject::aLoadScores, "LoadScores", 0 );
 
 	ADDPARAM( PARAM_STRING, "Score String", "Enter what you would like the score to be on the site." );
 	ADDPARAM( PARAM_VALUE, "Score Sort", "Enter a numerical sorting value to associate with this score." );
 	ADDPARAM( PARAM_STRING, "Extra Data", "Enter any extra data you would like to associate with this score." );
 	ADDPARAM( PARAM_STRING, "Guest Name", "Enter the guest's name if this is a guest score. Leave blank if user score." );
-	ADDACT( "Add Score", "Scores", "Add high score. Score: %0 Sort: %1 Extra Data: %2 Guest: %3", &ExtObject::aAddScore, "AddScore", 0 );
+	ADDPARAM( PARAM_VALUE, "Table ID", "The high score table to attach this score to. Leave blank for primary table." );
+	ADDACT( "Add Score", "Scores", "Add high score. Score: %0 Sort: %1 Extra Data: %2 Guest: %3 TableID: %4", &ExtObject::aAddScore, "AddScore", 0 );
 
 	/////////////////////////////
 	// Expressions
@@ -146,7 +149,7 @@ void DefineACES(MicroAceTime* at)
 	ADDEXP( "Get Score Stored Date", "Scores", "GetScoreStoredDate", &ExtObject::eGetScoreStoredDate, RETURN_STRING );
 
 	// This line includes your common ACEs as specified in Main.h
-#include "..\..\Common\CommonAceTable.hpp"
+#include "Common\CommonAceTable.hpp"
 }
 
 
